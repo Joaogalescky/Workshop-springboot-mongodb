@@ -11,6 +11,7 @@ import com.joaogalescky.workshopmongo.domain.Post;
 @Repository
 public interface PostRepository extends MongoRepository<Post, String> {
 
+	// Consulta do MongoDB em forma de texto Json
 	@Query("{ 'title': { $regex: ?0, $options: 'i' } }")
 	List<Post> searchTitle(String text);
 
